@@ -1,0 +1,30 @@
+/**
+*
+* Breadcrumb
+*
+**/
+
+.breadcrumbs { position:relative; z-index:1; text-transform:uppercase; padding-top: 0.8em; padding-bottom: 0.8em; color:palette(grey, dark); font-size: 14px; border-bottom: 1px solid palette(white, dark); margin-bottom: 30px; }
+.breadcrumbs .widget-breadcrumb { margin: 0; }
+.breadcrumbs li { line-height:20px; margin-right:6px; display:inline-block; *float:left; }
+.breadcrumbs .breadcrumb-item { position:relative; z-index:1; }
+.breadcrumbs .breadcrumb-item::before { line-height: 20px; content:"/"; display:inline-block; vertical-align:top; margin-right:6px; }
+.breadcrumbs a { color:palette(grey); }
+.breadcrumbs .ico,
+.breadcrumbs a:hover { color:palette(grey, dark); }
+
+
+
+@media all and ( max-width:820px ){
+
+    .breadcrumbs { font-size:0.9em; text-transform:initial; }
+    .breadcrumbs li,
+    .breadcrumbs .breadcrumb-item::before { margin-right:3px; }
+    .breadcrumbs .breadcrumb-label { display:none; }
+
+
+}
+
+@media all and (min-width: 1198px){
+    .breadcrumbs { padding-left: 0; padding-right: 0; }
+}

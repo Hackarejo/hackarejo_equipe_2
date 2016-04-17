@@ -1,0 +1,123 @@
+
+
+
+.header { position:relative; z-index:99; margin-top: 1rem; padding-bottom: 0; }
+.header .app-bar-top { background: palette(blue) url(../img/header-bg.jpg) no-repeat 50% 50%; padding-bottom:1em; @include cf; text-align: center; @include background-size; }
+.header .site-title { display: inline-block; margin-top: -2rem; }
+.header .site-title a { color:palette(dark); display:block; @include transition; @include cf; @include opacity(1); }
+.header .site-title a { text-decoration:none; }
+
+
+
+
+
+
+
+
+
+/*
+ * Menu
+ */
+.main-navigation { position:relative; z-index:1; }
+.main-navigation .nav { margin: 10px 0; text-align: center; }
+.main-navigation .navbar-toggle { display:none; }
+.main-navigation .menu-item { display:inline-block; }
+.main-navigation a { padding: 0.5rem 0.2rem; display:block; font-size:1.1em; color:palette(dark); }
+.main-navigation a:hover { color:palette(blue); background-color: palette(grey, light); @include transition; }
+.main-navigation .active a { color: palette(white); background-color: palette(grey); cursor: default; @include transition; }
+
+
+
+
+
+
+
+
+/* toggle nav - mobile */
+.header .togglemenu { display: none; }
+.header #togglemenu { position: absolute; left: -99em; top: 0; z-index: -1; opacity: 0; }
+.header #togglemenu:checked ~ .control-nav-close,
+.header #togglemenu:checked ~ .main-navigation { @include transform(translate(0, 0)); }
+
+
+
+.header .togglemenu .menu-icon { float: left; padding: 7px 0; border: solid palette(blue); border-width: 2px 0; }
+
+
+
+
+@media all and (min-width: 780px){
+
+    .main-navigation.fixed { position: fixed; top: 0; left: 0; right: 0; background-color: palette(white); box-shadow: 0 4px 28px -6px rgba(0,0,0, 0.2); }
+}
+@media all and (min-width: 1080px){
+    .main-navigation.fixed #navbar { @include center; }
+}
+
+
+
+
+
+
+
+
+
+@media only screen and (min-width:680px){
+
+    .header .app-bar-top { padding-bottom: 2em; }
+
+}
+
+@media only screen and (min-width:1080px){
+
+
+}
+
+
+@media all and (min-width: 780px){
+    
+    .main-navigation .nav { @include css3-prefix(display, flex); }
+    .main-navigation .nav .menu-item { @include css3-prefix(flex, 1 1 auto); }
+
+}
+
+@media all and (max-width: 780px){
+
+    .header { margin-top: 0; padding: 0; }
+    .header .app-bar-top { padding: 0 2%; text-align: left; }
+
+
+    /* logo */
+    .header .site-title { margin: 0; }
+    .header .site-title img { max-width:110px; padding: 15px 0; }
+
+
+    /* Navbar - mobile */
+    .header .togglemenu { position: absolute; right: 0; top: 0; display: block; height: 100%; min-width: 40px; padding: 0 20px; z-index: 2; cursor: pointer; }
+    .header .togglemenu .label { background-color: palette(white); margin-top: 30px; display: block; padding: 10px 14px; }
+    .header .togglemenu .menu-icon { border-color: palette(dark); margin-right: 10px; margin-top: 2px; }
+    .header .togglemenu .menu-icon::before { content: ""; display: block; width: 86%; height: 2px; background-color: palette(dark); }
+
+    .header .togglemenu:hover .label { background-color: palette(blue); color: palette(white); }
+
+    .header .control-nav-close,
+    .header .main-navigation { position: fixed; top: 0; right: 0; bottom: 0; @include transition(all 500ms ease); @include transform(translate(100%, 0)); }
+
+    .header .control-nav-close { left: 0; z-index: 1; display: block; background: rgba(0,0,0,0.4); }
+    .header .main-navigation { z-index: 2; width: 250px; margin-top: 0; border-left: 1px solid palette(dark, dark); background: palette(dark); overflow-x: auto; }
+
+
+
+    /* nav item single line */
+    .main-navigation .menu-item { display: block; }
+    .header .main-navigation .nav-item,
+    .header .main-navigation a,
+    .header .main-navigation .menu { display: block; padding: 0.5em 2%; color: palette(white); text-transform: uppercase; border-bottom: 1px solid rgba(palette(white), 0.1); }
+    .header .main-navigation .menu { font-family: $fontBold; }
+    .header .main-navigation a:focus,
+    .header .main-navigation a:hover,
+    .header .main-navigation .menu:focus,
+    .header .main-navigation .menu:hover { background-color: rgba(palette(white), 0.1); color: palette(dark, dark); }
+
+
+}

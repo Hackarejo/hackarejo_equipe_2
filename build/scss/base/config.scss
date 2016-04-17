@@ -1,0 +1,64 @@
+
+
+$max_width: 980px; // Largura maxima dos blocos
+$lineHeight: 20px;
+$radius: 8px;
+
+
+
+
+/*
+ * Fonts
+ */
+$fontDefault: 'CronosPro-Disp', Helvetica, Tahoma, Arial, sans-serif;
+$fontBold: 'CronosPro-Disp', Helvetica, Tahoma, Arial, sans-serif;
+
+
+
+
+
+/*
+ * Theme palettes
+ */
+$palettes: (
+    white: (
+        base:  #fff,
+        light: #eee,
+        dark:  #ccc
+    ),
+    grey: (
+        base:  #b2b2b2,
+        light: lighten(#b2b2b2, 12),
+        dark:  darken(#b2b2b2, 12)
+    ),
+    red: (
+        base:  #be3333,
+        light: lighten(#be3333, 12),
+        dark:  darken(#be3333, 12)
+    ),
+    dark: (
+        base:  #262626,
+        light: lighten(#262626, 12),
+        dark:  darken(#262626, 12)
+    ),
+
+    blue: (
+        base:  #4f6aa3,
+        light: lighten(#4f6aa3, 12),
+        dark:  darken(#4f6aa3, 12)
+    ),
+
+    // form theme
+    alert: (
+        base: #edecec,
+        info: #edecec,
+        success: #4ad290,
+        warning: #ffe084,
+        error: #d24a4a
+    )
+);
+
+// Palette function (Ex.: color:palette(purple); )
+@function palette($palette, $tone: 'base') {
+    @return map-get(map-get($palettes, $palette), $tone);
+}

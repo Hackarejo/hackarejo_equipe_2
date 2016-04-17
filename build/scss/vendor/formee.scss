@@ -1,0 +1,186 @@
+/********************************************************************
+Project:Formee - http://www.formee.org Launched: Version:3.1
+Authors:
+	Bernard De Luna - http://www.bernarddeluna.com
+	Daniel Araujo - http://www.dnlaraujo.com.br
+	Marcello Manso - http://www.marcellomanso.com.br
+
+Structure ********************************************************************/
+
+
+::-webkit-input-placeholder { color:#686868; font-size:16px; }
+:-moz-placeholder { color:#686868; font-size:16px; }
+::-moz-placeholder { color:#686868; font-size:16px; }
+:-ms-input-placeholder { color:#686868; font-size:16px; }
+
+
+
+/* Form Structure */
+.form fieldset { border:none; position:relative; }
+.form legend { padding:0.5em 0 1.2em; }
+
+
+
+/* form elements  */
+.form-lbl,
+.form label { display:block; height:auto; margin:0.2em 0 0.5em; }
+.form .form-txt,
+.form input,
+.form textarea,
+.form select { vertical-align:middle; line-height:1.3em; width:100%; height: 42px; padding:12px; border-style:solid; border-width:1px; @include box-sizing; /*ie7*/ *width:99%; }
+.file-upload .field-fake { padding: 12px 20px; }
+
+.form input[type="radio"],
+.form input[type="checkbox"] { width:auto; padding:0; }
+
+
+.form textarea { height:auto; }
+.form select { height:42px; padding:10px 15px; background:url(../img/icon/ico-down.png) no-repeat 96% 50%; @include css3-prefix(appearance, none); }
+.form select.loading { background-image:url(../img/loading.gif); }
+.form-list .form-lbl, .form-list label {display:inline; height:auto; margin:0.5em 0 0.8em 2px; }
+
+
+/* form button  */
+.btn-submit,
+.form input[type="submit"] { padding: 8px 16px; height: auto; cursor:pointer; text-align:center; display:inline-block; border:none; }
+.form .button-full { width:100%; padding-left:0; padding-right:0; text-align:center; }
+
+/* lista de chk e rdo */
+.form-list {height:100%; list-style:none; padding:0; margin:0; }
+.form-list li, .form-list li {margin:0.5em 0.6em 0.8em; float:left; display:inline-block; list-style:none; }
+.form-list input {margin-right:0.2em}
+
+/* input size */
+.form-small {width:30% !important; float:left; margin-right:10px; display:inline; /*ie7*/ *width:25% !important; }
+.form-medium {width:50% !important; float:left; margin-right:10px; display:inline; /*ie7*/ *width:45% !important; }
+
+
+
+/******************************************************************** Project:Formee - http://www.formee.org Last Updated:Version:3.1 Authors:Bernard De Luna - http://www.bernarddeluna.com Daniel Araujo - http://www.dnlaraujo.com.br Marcello Manso - http://www.marcellomanso.com.br ******************************************************************** Style ********************************************************************/
+.form fieldset {  }
+
+
+/* Form legend and titles */
+.form legend,
+.form .legend { font-size:1em; line-height:1.2em; letter-spacing:-.035em; color:palette(dark); font-weight:700; white-space:normal; width:100%; }
+.form .align-left { text-align:left; }
+.form .small { font-size:1.5em; }
+
+/* form elements  */
+.form .field { margin-top: 0.25rem; margin-bottom: 0.25rem; }
+.form-lbl, .form label { color:#2b2b2b; font-size:1.1em; line-height:1.2em; vertical-align:middle; }
+.form .no-label { margin-top:31px; }
+.form-req { font-weight:bold; font-style:normal; color:#d10000; font-size:1.2em; }
+.form .form-txt,
+.form input,
+.form textarea,
+.form select,
+.file-upload .field-fake { border-color: rgba(0,0,0, 0.1); background-color:palette(white, light); color:palette(grey, dark); @include transition; }
+.file-upload .field-fake { border-style:solid; border-width:1px; }
+
+
+.form .form-txt:hover,
+.form input:hover,
+.form textarea:hover,
+.form select:hover { color:#555; background-color:#f9f9f9; border-color:#999; }
+
+form .form-txt:focus,
+.form input:focus,
+.form textarea:focus,
+.form select:focus  { color:palette(blue); background-color:rgba(palette(white), 0.8); border-color:transparent !important; outline: 2px solid palette(blue); }
+
+
+/* form buttons */
+.btn-submit,
+.form input[type="submit"] { width:auto; font-size:1.1em; padding:1.7em; line-height:-moz-block-height; letter-spacing:0.05em; color:#fff; background-color:palette(blue); border-radius:4px;  }
+
+
+
+
+a.btn-submit:hover,
+.form-button:hover,
+.form input[type="submit"]:hover { -webkit-box-shadow: inset 10px 10px 90px -32px rgba(0,0,0,0.75);
+-moz-box-shadow: inset 10px 10px 90px -32px rgba(0,0,0,0.75);
+box-shadow: inset 10px 10px 90px -32px rgba(0,0,0,0.75); color:palette(white); @include transition; }
+
+
+
+
+
+/*
+ * Validation
+ */
+form.form input.error,
+form.form select.error,
+form.form textarea.error { border-color:palette(alert, error); @include placeholder(){ color:lighten(palette(alert, error), 6) }; }
+
+form.form label.error { display:none !important; }
+
+
+/* form msg status  */
+.form-msg { color:#fff; display:none; visibility:hidden; background:palette(grey) no-repeat 10px 50%; @include transition; text-align:center; margin:6px 0; position:relative; z-index:1; border:1px solid transparent; }
+.form-msg.show { padding:5px 5px; display:block; visibility:visible; }
+.form-msg h3 { font-size:1em; letter-spacing:-.02em; padding:0; margin:0; }
+.form-msg .icon { font-size:22px; color:palette(white); display:inline-block; vertical-align:middle; }
+.form-msg .icon::before { vertical-align:middle; }
+.form-msg .closed { width:24px; height:24px; line-height:24px; position:absolute; top:50%; right:8px; margin-top:-13px; border:none; background-color:rgba(palette(white), 0.5); color:palette(dark); font-size:1.4em; @include border-radius(2em); padding:0; }
+.form-msg .closed:hover { color:palette(dark); }
+
+
+
+$validStatus: (
+	info:palette(alert, info),
+	warning:palette(alert, warning),
+	error:palette(alert, error),
+	success:palette(alert, success)
+);
+
+@each $key, $value in $validStatus {
+
+    .form-msg.#{$key} { background-color:$value; }
+    .form-msg.#{$key} strong,
+    .form-msg.#{$key} a { color:darken($value, 20); }
+
+}
+
+.form-msg.info { background-color:transparent; color:palette(dark); border-color:palette(dark); }
+.form-msg.warning .message { color:darken(palette(alert,warning), 30); }
+
+
+
+
+
+
+
+@media only screen and (max-width:600px) {
+
+	.form .col.s12 { margin-top: 0.4em; margin-bottom: 0.4em; }
+
+}
+@media only screen and (max-width:720px) {
+
+	.form .form-txt,
+	.form input,
+	.form textarea,
+	.form select,
+	.heapBox .holder { padding:0.8em 6px; }
+
+	/* form buttons */
+	.btn-submit,
+	.form input[type="submit"] { width:100%; }
+
+}
+
+@media only screen and (min-width:1030px){
+
+	.form .form-txt,
+	.form input,
+	.form textarea,
+	.form select,
+	.file-upload .field-fake { height: 42px; line-height: 1.8em; }
+	.form textarea { height: auto; }
+
+	.btn-submit,
+	.form input[type="submit"] { height: 42px; }
+
+}

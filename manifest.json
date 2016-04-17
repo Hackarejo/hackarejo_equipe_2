@@ -1,0 +1,21 @@
+{
+	"name": "Project_name",
+	"description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+	"default_locale": "pt-br",
+	"version": "0.0.0.1",
+	"manifest_version": 2,
+	"icons": [
+
+		// Create icons
+		// http://realfavicongenerator.net/
+
+	],
+	"app": {
+		"urls": [
+			"http://project_name.com.br/"
+		],
+		"launch": {
+			"web_url": "http://project_name.com.br/"
+		}
+	}
+}
