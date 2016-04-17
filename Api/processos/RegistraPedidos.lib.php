@@ -1,7 +1,7 @@
 <?php
 
 header("Access-Control-Allow-Origin: *");
-header('Content-Type: text/html; charset=iso-8859-1');
+//header('Content-Type: text/html; charset=iso-8859-1');
 
 $root = dirname(dirname(dirname(__FILE__)));
 
@@ -19,7 +19,8 @@ class RegistraPedidos{
 					Trata parâmetros
 			
 			   ------------------------------------------------------------------- */
-			
+
+			$params = Funcs::Utf8_decodeArray($params);
 			$api = new Api();
 			
 			/* -------------------------------------------------------------------

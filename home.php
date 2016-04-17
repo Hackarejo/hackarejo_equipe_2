@@ -39,7 +39,8 @@
                     </ul>
                 </div>
 
-                <div class="window" id="modal" style="top: 36px;left: 32.5px;width: 320px;display: none;"  >
+                <!-- 32.5 -->
+                <div class="window" id="modal" style="top: 36px;left: 70.5px;width: 320px;display: none;"  >
                     <a href="#" class="fechar">X </a>
                     <div>
                         <h1>Adicionar pedido</h1>

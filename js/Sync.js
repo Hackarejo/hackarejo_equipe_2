@@ -30,7 +30,7 @@ function AutentificaUsuario(email, senha){
 				alert("Erro ao autentificar usuário\n" + data.data);
 			}
 		}
-	});
+	})
 
 	return count;
 }
@@ -192,6 +192,7 @@ function RegistraPedido(id_usuario, descricao, data, data_final, valorMin, valor
 
 	$.ajax({
 		url       	: 'http://172.40.0.28/Api/processos/RegistraPedidos.lib.php',
+		async		: false,
 		type      	: 'POST',
 	    dataType  	: 'json',
 	    data		: {
